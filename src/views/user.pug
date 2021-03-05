@@ -1,0 +1,25 @@
+extends layout
+
+block body:header(container)
+	//- empty
+
+block body:content
+	h1 #{user.name}
+
+	dl
+		dt Username
+		dd= user.username
+
+		dt ID
+		dd= user.id || user._id
+
+		dt Age
+		dd= user.age
+
+block body:footer(container)
+	div
+		a(href=`/articles?author=${user.username}`) articles
+
+	div
+		form(method="POST", action="/auth/logout")
+			button(type="submit") logout
