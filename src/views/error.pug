@@ -1,13 +1,7 @@
 extends layout
 
-block body:header(container)
-	//- empty
-
 block body:content
 	if message == null
 		h1 😱 An unknown error occurred 😢
 	else
 		h1= message
-
-block body:footer(container)
-	//- empty

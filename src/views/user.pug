@@ -1,8 +1,5 @@
 extends layout
 
-block body:header(container)
-	//- empty
-
 block body:content
 	h1 #{user.name}
 
@@ -16,7 +13,7 @@ block body:content
 		dt Age
 		dd= user.age
 
-block body:footer(container)
+block prepend body:footer
 	div
 		a(href=`/articles?author=${user.username}`) articles
 
