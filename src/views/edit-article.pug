@@ -3,7 +3,7 @@ extends layout
 block body:content
 	if article == null
 		h1 Error!
-		h3 Article object is not provided
+		h3 Article object (#[code article] variable) is not provided
 	else
 		form(method="POST", action=`/articles/${article.id}/edit`)
 			p

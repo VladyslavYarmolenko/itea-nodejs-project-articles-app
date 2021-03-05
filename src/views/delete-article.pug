@@ -1,0 +1,16 @@
+extends layout
+
+block body:content
+	if articleID == null
+		h1 Error!
+		h3 Article ID (#[code articleID] variable) is not provided
+	else
+		h1 Delete article?
+
+		p
+			| Are you sure you want to delete article #[code= articleID]?
+
+		form(method="POST", action=`/articles/${article.id}/delete`)
+			.buttons
+				button(type="submit") Yes
+				a(href=`/articles/${articleID}`) No
