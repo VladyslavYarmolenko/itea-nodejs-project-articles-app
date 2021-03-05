@@ -1,0 +1,12 @@
+{
+  "name": "itea-nodejs-project-articles-app",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "keywords": [],
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src"
+  }
+}
