@@ -10,7 +10,10 @@ html(lang="en")
 			title Articles
 
 		block head:styles
-			//- empty
+			style.
+				footer .links a {
+					display: block;
+				}
 
 		block head:scripts
 			//- empty
@@ -27,6 +30,9 @@ html(lang="en")
 		block body:footer(container)
 			footer
 				block body:footer
+					.links
+						a(href="/articles") See all articles
+						a(href="/auth") Personal page
 
 		block body:scripts
 			//- empty
