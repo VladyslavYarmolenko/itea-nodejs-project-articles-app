@@ -1,0 +1,19 @@
+extends layout
+
+block body:content
+	h1= article.title
+	h3 By #{article.author}
+
+	div
+		small: em Created at #{new Date(article.created).toLocaleString("uk")}
+	if article.edited != null
+		div
+			small: em Last edited at #{new Date(article.edited).toLocaleString("uk")}
+
+	p= article.text
+
+block append body:footer
+	if own
+		.links
+			a(href=`/articles/${article.id}/edit`) Edit this article
+			a(href=`/articles/${article.id}/delete`) Delete this article
