@@ -1,0 +1,20 @@
+extends layout
+
+block body:content
+	if article == null
+		h1 Error!
+		h3 Article object is not provided
+	else
+		form(method="POST", action=`/articles/${article.id}/edit`)
+			p
+				span Title:
+				br
+				input(type="text", name="title", value=article.title)
+			p
+				span Text:
+				br
+				textarea(name="text")= article.text
+
+			.buttons
+				button(type="submit") Save
+				a(href=`/articles/${articleID}`) Cancel
