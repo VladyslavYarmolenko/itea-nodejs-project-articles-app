@@ -1,0 +1,16 @@
+extends layout
+
+block body:content
+	form(method="POST", action="/articles")
+		p
+			span Title:
+			br
+			input(type="text", name="title")
+		p
+			span Text:
+			br
+			textarea(name="text")
+
+		.buttons
+			button(type="submit") Save
+			button(type="reset" onclick="javascript:history.back()") Cancel
