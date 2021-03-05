@@ -1,0 +1,15 @@
+extends layout
+
+block body:content
+	form(method="POST", action="/auth")
+		p
+			span Username:
+			br
+			input(type="text", name="username")
+		p
+			span Password:
+			br
+			input(type="password", name="password")
+
+		.buttons
+			button(type="submit") Log in
