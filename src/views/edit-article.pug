@@ -1,5 +1,13 @@
 extends layout
 
+//-
+	this page uses variables:
+		article: Object {
+			_id: string | ID
+			title: string
+			text: string
+		}
+
 block body:content
 	if article == null
 		h1 Error!

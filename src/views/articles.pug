@@ -1,5 +1,18 @@
 extends layout
 
+//-
+	this page uses variables:
+		pagination: Object {
+			nextPage: string
+			(optional) prevPage: string
+		}
+		articles: Array<Object {
+			_id: string | ID
+			title: string
+			text: string
+			author: string
+		}>
+
 mixin pagination
 	if pagination != null
 		.pagination

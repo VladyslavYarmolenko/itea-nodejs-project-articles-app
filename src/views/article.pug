@@ -1,5 +1,17 @@
 extends layout
 
+//-
+	this page uses variables:
+		own: boolean
+		article: Object {
+			_id: string | ID
+			title: string
+			text: string
+			author: string
+			created: Date | string (ISO 8601)
+			(optional) edited: Date | string (ISO 8601)
+		}
+
 block body:content
 	h1= article.title
 	h3 By #{article.author}
