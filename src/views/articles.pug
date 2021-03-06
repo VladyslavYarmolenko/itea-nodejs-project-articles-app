@@ -29,12 +29,13 @@ block body:content
 
 	+pagination
 
-	each article in articles
-		.article
-			header
-				h3
-					a(href=`/articles/${article._id}`) "#{article.title}" &mdash; by #{article.author}
-			.content
-				p= article.text.slice(0, 100)
+	if articles.length > 0
+		each article in articles
+			.article
+				header
+					h3
+						a(href=`/articles/${article._id}`) "#{article.title}" &mdash; by #{article.author}
+				.content
+					p= article.text.slice(0, 100)
 
 		+pagination
