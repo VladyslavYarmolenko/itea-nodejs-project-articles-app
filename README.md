@@ -1,7 +1,5 @@
-## Usage
+# `itea-nodejs-project-articles-app`
 
-- create new GitHub repo using https://github.com/parzh/package-javascript.git as a template;
-- clone the new repo locally;
-- run `npm init` to fill missing info (such as the "name" and "author" fields);
-- (optional) remove the `"private": true` failsafe;
-- start developing the new package!
+The "main" branch is `master` (e.g., it is used for deployment).
+
+The code written during the lesson is being continuously pushed in `develop` branch.
