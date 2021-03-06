@@ -10,7 +10,7 @@ block body:content
 		p
 			| Are you sure you want to delete article #[code= articleID]?
 
-		form(method="POST", action=`/articles/${article.id}/delete`)
+		form(method="POST", action=`/articles/${articleID}/delete`)
 			.buttons
 				button(type="submit") Yes
 				a(href=`/articles/${articleID}`) No

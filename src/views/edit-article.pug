@@ -5,7 +5,7 @@ block body:content
 		h1 Error!
 		h3 Article object (#[code article] variable) is not provided
 	else
-		form(method="POST", action=`/articles/${article.id}/edit`)
+		form(method="POST", action=`/articles/${article._id}/edit`)
 			p
 				span Title:
 				br
@@ -17,4 +17,4 @@ block body:content
 
 			.buttons
 				button(type="submit") Save
-				a(href=`/articles/${articleID}`) Cancel
+				a(href=`/articles/${article._id}`) Cancel
