@@ -24,7 +24,7 @@ router.route("/")
 				details: `Expected (stringified) positive integer less than 100, got "${req.query.pagesize}"`,
 			});
 
-		const prevPage = page == null ? null : `/articles?author=${author}&pagesize=${pageSize}&page=${page - 1}`;
+		const prevPage = page <= 1 ? null : `/articles?author=${author}&pagesize=${pageSize}&page=${page - 1}`;
 		const nextPage = `/articles?author=${author}&pagesize=${pageSize}&page=${page + 1}`;
 
 		const articles = await getArticles({
