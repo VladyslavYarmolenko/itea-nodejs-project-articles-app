@@ -4,9 +4,9 @@ mixin pagination
 	if pagination != null
 		.pagination
 			if pagination.prevPage != null
-				a(href=prevPage) prev
+				a(href=pagination.prevPage) prev
 				| #{" | "}
-			a(href=nextPage) next
+			a(href=pagination.nextPage) next
 
 block append head:styles
 	style.
@@ -26,12 +26,15 @@ block body:content
 		h1 No articles to show
 	else
 		h1 Showing #{articles.length} articles
-		+pagination
-		each article in articles
-			.article
-				header
-					h3
-						a(href=`/articles/${article._id}`) "#{article.title}" &mdash; by #{article.author}
-				.content
-					p= article.text.slice(0, 100)
+
+	+pagination
+
+	each article in articles
+		.article
+			header
+				h3
+					a(href=`/articles/${article._id}`) "#{article.title}" &mdash; by #{article.author}
+			.content
+				p= article.text.slice(0, 100)
+
 		+pagination
