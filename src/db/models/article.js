@@ -27,4 +27,3 @@ articleSchema.index({ _id: 1, created: 1 });
 const Article = mongoose.model("Article", articleSchema);
 
 module.exports = Article;
-
