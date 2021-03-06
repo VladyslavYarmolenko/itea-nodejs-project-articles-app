@@ -24,14 +24,14 @@ router.route("/")
 				details: `Expected (stringified) positive integer less than 100, got "${req.query.pagesize}"`,
 			});
 
-		const prevPage = page <= 1 ? null : `/articles?author=${author}&pagesize=${pageSize}&page=${page - 1}`;
-		const nextPage = `/articles?author=${author}&pagesize=${pageSize}&page=${page + 1}`;
-
 		const articles = await getArticles({
 			author: author,
 			limit: pageSize,
 			offset: (page - 1) * pageSize,
 		});
+
+		const prevPage = page <= 1 ? null : `/articles?author=${author}&pagesize=${pageSize}&page=${page - 1}`;
+		const nextPage = articles.length < pageSize ? null : `/articles?author=${author}&pagesize=${pageSize}&page=${page + 1}`;
 
 		// user prefers html
 		if (req.accepts("json", "html") === "html") // TODO: extract in src/router/{middleware}.js

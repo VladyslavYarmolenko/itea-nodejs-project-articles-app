@@ -3,7 +3,7 @@ extends layout
 //-
 	this page uses variables:
 		pagination: Object {
-			nextPage: string
+			(optional) nextPage: string
 			(optional) prevPage: string
 		}
 		articles: Array<Object {
@@ -18,8 +18,10 @@ mixin pagination
 		.pagination
 			if pagination.prevPage != null
 				a(href=pagination.prevPage) prev
+			if pagination.prevPage != null && pagination.nextPage != null
 				| #{" | "}
-			a(href=pagination.nextPage) next
+			if pagination.nextPage != null
+				a(href=pagination.nextPage) next
 
 block append head:styles
 	style.
