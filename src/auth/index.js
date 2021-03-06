@@ -4,11 +4,11 @@ const users = require("./users");
 
 passport.use(strategy);
 
-passport.serializeUser((username, done) => {
+passport.deserializeUser((username, done) => {
 	done(null, users[username]);
 });
 
-passport.deserializeUser((user, done) => {
+passport.serializeUser((user, done) => {
 	done(null, user.username);
 });
 
