@@ -8,7 +8,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --require dotenv/config src",
-    "dev": "nodemon --ext js,json,pug --require dotenv/config src dotenv_config_path=.env.development"
+    "dev": "nodemon --ext js,json,pug --require dotenv/config src dotenv_config_path=.env.development",
+    "play": "nodemon --ext js,json,pug --require dotenv/config src/play dotenv_config_path=.env.development"
   },
   "dependencies": {
     "dotenv": "8.2.0",
