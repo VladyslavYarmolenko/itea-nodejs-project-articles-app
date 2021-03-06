@@ -15,7 +15,7 @@ async function connect() {
 		useUnifiedTopology: true,
 	});
 
-	console.log("Connected to db");
+	console.log(`MongoDB connected to ${mongoose.connection.host}:${mongoose.connection.port}`);
 }
 
 module.exports = connect;
