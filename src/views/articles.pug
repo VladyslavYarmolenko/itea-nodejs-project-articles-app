@@ -1,0 +1,37 @@
+extends layout
+
+mixin pagination
+	if pagination != null
+		.pagination
+			if pagination.prevPage != null
+				a(href=prevPage) prev
+				| #{" | "}
+			a(href=nextPage) next
+
+block append head:styles
+	style.
+		.pagination {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.article {
+			padding: 0.5em 1em;
+			border: 1px solid lightgrey;
+			margin-bottom: 1em;
+		}
+
+block body:content
+	if articles.length === 0
+		h1 No articles to show
+	else
+		h1 Showing #{articles.length} articles
+		+pagination
+		each article in articles
+			.article
+				header
+					h3
+						a(href=`/articles/${article.id}`) "#{article.title}" &mdash; by #{article.author}
+				.content
+					p= article.text.slice(0, 100)
+		+pagination
