@@ -18,6 +18,7 @@ function getArticles(params) {
 			$regex: params.author,
 		},
 	})
+		.sort({ created: "desc" })
 		.skip(params.offset)
 		.limit(params.limit);
 
