@@ -34,7 +34,7 @@ router.route("/")
 		});
 
 		// user prefers html
-		if (req.accepts("json", "html") === "html")
+		if (req.accepts("json", "html") === "html") // TODO: extract in src/router/{middleware}.js
 			return res.render("articles", {
 				articles,
 				pagination: { prevPage, nextPage },

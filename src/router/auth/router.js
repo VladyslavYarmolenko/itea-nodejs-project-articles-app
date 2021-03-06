@@ -27,7 +27,7 @@ router.route("/")
 	.all(sendStatus(405));
 
 router.route("/logout")
-	.all((req, res) => res.sendStatus(501))
+	.all((req, res) => res.sendStatus(501)) // TODO: remove
 	.post()
 	.all(sendStatus(405));
 
