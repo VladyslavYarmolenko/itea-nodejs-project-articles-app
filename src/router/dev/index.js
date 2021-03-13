@@ -1,7 +1,7 @@
 const express = require("express");
-
-if (process.env.NODE_ENV !== "development")
-	throw new Error("Development router required on non-development environment!");
+// console.log(process.env)
+// if (process.env.NODE_ENV !== "development")
+// 	throw new Error("Development router required on non-development environment!");
 
 const router = express.Router();
 

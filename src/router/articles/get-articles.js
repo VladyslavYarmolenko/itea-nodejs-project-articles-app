@@ -1,18 +1,18 @@
 const Article = require("../../db/models/article"); // TODO: setup path aliases
-
 /**
  * @typedef Params
  * @property {string|RegExp} author
  * @property {number} limit
  * @property {number} offset
  */
-null;
+ null;
 
-/**
- * @param {Params} params
- * @returns {Promise<object[]>}
- */
-function getArticles(params) {
+ /**
+	* @param {Params} params
+	* @returns {Promise<object[]>}
+	*/
+
+async function getArticles(params) {
 	const query = Article.find({
 		author: {
 			$regex: params.author,

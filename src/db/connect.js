@@ -8,6 +8,8 @@ url.pathname = process.env.NODE_ENV;
 url.username = process.env.MONGODB_USERNAME;
 url.password = process.env.MONGODB_PASSWORD;
 
+console.log('URL:', url)
+
 url.searchParams.set("retryWrites", "true");
 url.searchParams.set("w", "majority");
 
@@ -22,3 +24,4 @@ async function connect() {
 }
 
 module.exports = connect;
+
