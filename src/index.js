@@ -1,6 +1,7 @@
+require('dotenv').config();
 const app = require("./app");
 const connect = require("./db/connect");
-require('dotenv').config();
+
 
 console.log(`Starting on ${app.get("env")}...`);
 

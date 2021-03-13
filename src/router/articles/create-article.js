@@ -1,6 +1,6 @@
-const Article = require("../../db/models/article"); // TODO: setup path aliases
+const Article = require("../../db/models/article"); /** TODO: setup path aliases
 
-/
+/**
  * @typedef Params
  * @property {string} author
  * @property {string} title
@@ -9,11 +9,10 @@ const Article = require("../../db/models/article"); // TODO: setup path aliases
  */
 null;
 
-/
+/**
  * @param {Params} params
- * @returns {Promise<object[]>}
+ * @returns {Promise<object>}
  */
-
 function createArticle(params) {
   const newArtile = new Article(params);
   
